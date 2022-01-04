@@ -1,0 +1,33 @@
+.result-image {
+    height: auto;
+    width: 100px;
+    padding: .5em;
+}
+
+.result-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.result-card:hover {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.results-list-wrapper {
+    position: relative;
+}
+
+.result-link {
+    text-decoration: none;
+}
+
+.result-link:hover {
+    text-decoration: none;
+}
+
+.result-info {
+    padding: 3px;
+}

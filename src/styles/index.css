@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+body {
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('../images/moroccan-flower-dark.png');
+  color: white;
+  margin: 0;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

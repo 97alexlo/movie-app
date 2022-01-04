@@ -1,0 +1,12 @@
+.text-wrapper {
+    padding: 1em;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.text-wrapper p {
+    margin-top: -1em;
+}

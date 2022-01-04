@@ -1,0 +1,94 @@
+.movie-image {
+    max-width: 10em;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.movie-image:hover {
+    max-width: 10em;
+    height: auto;
+    border: 2px solid rgb(98, 144, 212);
+    border-radius: 5px;
+}
+
+h5 {
+    font-weight: bold;
+}
+.movie-card {
+    background: url('../images/floor-tile.png');
+    border-radius: 5px;
+    padding: .5em;
+    border: 3px solid darkgray;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.movie-info {
+    margin-left: 4px;
+    color: black;
+    padding: 4px;
+}
+
+
+p {
+    background-color: dark-gray;
+}
+
+.badge-rating-mobile {
+    float: right;
+    font-size: .8em;
+}
+
+.btns:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btns {
+    outline: none;
+    box-shadow: none;
+    padding: .3em;
+    height: 50%;
+    width: 48%;
+    font-size: 1em;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .movie-card {
+        background: url('../images/floor-tile.png');
+        border-radius: 5px;
+        padding: .5em;
+        border: 3px solid darkgray;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .movie-info {
+        flex-direction: column;
+        margin-left: 4px;
+        padding-left: none;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .movie-card {
+        background: url('../images/floor-tile.png');
+        border-radius: 5px;
+        padding: .5em;
+        border: 3px solid darkgray;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    .movie-info {
+        flex-direction: column;
+        margin-left: 4px;
+        padding-left: none;
+        justify-content: space-evenly;
+    }
+}

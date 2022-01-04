@@ -1,0 +1,19 @@
+.dropdown-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+    margin-left: .5em;
+}
+
+.home-page {
+    max-width: 86em;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+
+.search-input {
+    width: 10em;
+}

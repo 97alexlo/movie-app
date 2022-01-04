@@ -1,0 +1,27 @@
+.favorites-wrapper {
+    max-width: 85em;
+    margin: auto;
+    padding: .5em;
+}
+
+.no-favorites {
+    text-align: center;
+}
+
+.badge-counter {
+    padding: .6em;
+    font-size: 1em;
+    font-weight: normal;
+    color:black;
+    border: 2px solid darkgray;
+    float: right
+}
+
+.favorites-header {
+    margin-bottom: 1em;
+}
+
+.favorites-title {
+    text-align: left;
+    margin-left: .3em;
+}

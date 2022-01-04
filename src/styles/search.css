@@ -1,0 +1,31 @@
+.search-input {
+    width: 30em;
+    margin-bottom: .5em;
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    .search-input {
+        width: 100%;
+        margin-bottom: .5em;
+        display: inline-block;
+    }
+}
+
+.wrapper-search {
+    text-align: center;
+    display: flex;              /* establish flex container */
+    flex-direction: column;     /* stack flex items vertically */
+ /* center items vertically, in this case */
+    align-items: center; 
+}
+
+.movie-list{
+    position: absolute;
+    background: url('../images/bush.png');
+    margin-top: 50px;
+    max-width: 80%;
+    border: 2px solid white;
+    border-radius:5px;
+    z-index: 2;
+}

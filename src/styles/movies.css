@@ -1,0 +1,27 @@
+.movies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2em;
+    padding: .4em;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1230px) {
+    .movies-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2em;
+        padding: .4em;
+        border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .movies-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2em;
+        padding: .4em;
+        border-radius: 5px;
+    }
+  }
