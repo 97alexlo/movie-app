@@ -28,12 +28,9 @@ function SingleMoviePage() {
             setMovieData(res.data);
         }
 
-        // const fetchBackDrop = async() => {
-        //     const res 
-        // }
         fetchMovie()
     }, [id])
-    console.log(`https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path}`)
+    
     return (
         <div className='page-wrapper'>
         <div className='single-movie-wrapper' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`}}>
