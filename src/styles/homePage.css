@@ -8,12 +8,19 @@
 .home-page {
     max-width: 86em;
     margin: auto;
+    padding: 5px;
     border: 2px solid white;
     border-radius: 10px;
-    padding: .5em;
     margin-bottom: .5em;
 }
 
+@media screen and (max-width: 400px) {
+    .home-page {
+        margin: auto;
+        max-width: 86em;
+        padding: 5px 0;
+    }
+}
 .search-input {
     width: 10em;
 }
