@@ -28,6 +28,7 @@ ul {
 
 .poster {
     height: 40vh;
+    border-radius: 3px;
 }
 
 .inner-movie-div {
@@ -44,6 +45,20 @@ ul {
 
 .movie-poster {
     justify-content: center;
+}
+
+.bottom-btns {
+    padding: 5px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(255, 85, 85);
+    color: white;
+}
+
+.bottom-btns:hover {
+    background-color: rgb(225, 85, 85);
+    transition: 0.2s
 }
 
 @media screen and (min-width: 900px) {
@@ -86,11 +101,6 @@ ul {
 
     .bottom-movie-overview li { 
         margin-top: 3px;
-    }
-
-    .bottom-btns:focus {
-        outline: none;
-        box-shadow: none;
     }
 
 }

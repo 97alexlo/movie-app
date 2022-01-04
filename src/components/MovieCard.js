@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import noPoster from '../images/no-movie-poster.jpg';
 import '../styles/movieCard.css'
-import { Button, Badge } from 'react-bootstrap'
+import { Badge } from 'react-bootstrap'
 // import {useContext} from 'react'
 // import {GlobalContext} from '../context/GlobalState.js'
 import {useDispatch, useSelector} from 'react-redux'
@@ -16,7 +16,7 @@ function MovieCard({movie}) {
 
     // check if movie is already favorited
     let favoritedMovie = favorites.find(movieObj => movieObj.id === movie.id)
-    const favorited = favoritedMovie ? true : false
+    let favorited = favoritedMovie ? true : false
     return (
         <div className='movie-card'>
                 <div className='movie-poster'> 
@@ -40,17 +40,23 @@ function MovieCard({movie}) {
                 </ul>
                 <p>{overviewSubstring}...</p>
                 <div className="buttons">
-                    <Button className="btns" as={Link} to={`/movie/${movie.id}`} variant="primary">
+                    {/* <Button className="btn-moreinfo" as={Link} to={`/movie/${movie.id}`} variant="primary">
                     More Info
-                    </Button> {' '}
+                    </Button> {' '} */}
+                    <Link to={`/movie/${movie.id}`}>
+                        <button className='btn-moreinfo'>
+                            More Info
+                        </button>
+                    </Link>
+                    {' '}
                     {favorited ?
-                    <Button className="btns" onClick={() => dispatch(removeFavorite(movie.id))} variant="warning">
+                    <button className="btn-favorite" onClick={() => dispatch(removeFavorite(movie.id))}>
                         Unfavorite
-                    </Button> 
+                    </button> 
                     :
-                    <Button className="btns" onClick={() => dispatch(addFavorite(movie))} variant="warning">
+                    <button className="btn-favorite" onClick={() => dispatch(addFavorite(movie))}>
                         Favorite
-                    </Button>
+                    </button>
                     }
                 </div>
             </div>

@@ -41,18 +41,35 @@ p {
     font-size: .8em;
 }
 
-.btns:focus {
+.btn-moreinfo, .btn-favorite, .btn-unfavorite {
     outline: none;
     box-shadow: none;
-}
-
-.btns {
-    outline: none;
-    box-shadow: none;
-    padding: .3em;
+    padding: 7px;
     height: 50%;
     width: 48%;
     font-size: 1em;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-moreinfo {
+    background-color: rgb(88, 161, 117);
+    color: white;
+}
+
+.btn-moreinfo:hover {
+    background-color: rgb(38, 161, 117);
+    transition: 0.2s;
+}
+.btn-favorite {
+    background-color: rgb(255, 85, 85);
+    color: white;
+}
+
+.btn-favorite:hover {
+    background-color: rgb(225, 85, 85);
+    transition: 0.2s;
 }
 
 

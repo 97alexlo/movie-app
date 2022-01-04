@@ -2,3 +2,7 @@
     padding-bottom: 1em;
     margin: -.5em;
 }
+
+.nav-bar {
+    background-image: url('../images/stars.jpeg') !important;
+}

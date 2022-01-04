@@ -43,13 +43,13 @@ function SingleMoviePage() {
                     </ul>
                     <p className='movie-content'>{movieData.overview}</p>
                     {favorited ?
-                    <Button className='bottom-btns' onClick={() => dispatch(removeFavorite(movieData.id))} variant="warning">
+                    <button className="bottom-btns" onClick={() => dispatch(removeFavorite(movieData.id))}>
                         Unfavorite
-                    </Button> 
+                    </button> 
                     :
-                    <Button className='bottom-btns' onClick={() => dispatch(addFavorite(movieData))} variant="warning">
+                    <button className="bottom-btns" onClick={() => dispatch(addFavorite(movieData))}>
                         Favorite
-                    </Button>
+                    </button>
                     }
                 </div>         
             </div>
@@ -57,14 +57,14 @@ function SingleMoviePage() {
         <div className='bottom-movie-overview'>
             <h3>{movieData.title}</h3>
             {favorited ?
-            <Button className='bottom-btns' onClick={() => dispatch(removeFavorite(movieData.id))} variant="warning">
-                Unfavorite
-            </Button> 
-            :
-            <Button className='bottom-btns' onClick={() => dispatch(addFavorite(movieData))} variant="warning">
-                Favorite
-            </Button>
-            }
+                    <button className="bottom-btns" onClick={() => dispatch(removeFavorite(movieData.id))}>
+                        Unfavorite
+                    </button> 
+                    :
+                    <button className="bottom-btns" onClick={() => dispatch(addFavorite(movieData))}>
+                        Favorite
+                    </button>
+                    }
             <ul>
             <li>Genres: {movieData.genres && movieData.genres.slice(0, movieData.genres.length - 1).map(genre => " " + genre.name ) + ", " + movieData.genres.at(-1).name}</li> 
                 <li>Released: {movieData.release_date}</li>

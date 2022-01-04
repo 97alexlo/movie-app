@@ -10,3 +10,9 @@
 .text-wrapper p {
     margin-top: -1em;
 }
+
+.search-icon {
+    height: auto;
+    width: 25px;
+    margin-right: 8px;
+}

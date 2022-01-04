@@ -3,6 +3,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import ResultCard from './ResultCard'
 import '../styles/search.css'
+import searchIcon from '../images/search.png'
 
 function Search() {
     const [query, setQuery] = useState("")
@@ -32,6 +33,7 @@ function Search() {
     return (
         <div className='wrapper-search'>
             <div>
+                <img className="search-icon" src={searchIcon} alt="search-icon" />
                 <Form className='search-input'>
                     <FormControl
                     type="search"
@@ -39,8 +41,7 @@ function Search() {
                     value={query}
                     onChange={handleChange}
                     />
-                </Form>
-            </div>
+                </Form>            </div>
             <div className='movie-list'>
                 {results.length > 0 && 
                 <ul>
