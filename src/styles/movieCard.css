@@ -31,11 +31,6 @@ h5 {
     padding: 4px;
 }
 
-
-p {
-    background-color: dark-gray;
-}
-
 .badge-rating-mobile {
     float: right;
     font-size: .8em;
@@ -108,6 +103,9 @@ p {
         padding-left: none;
         justify-content: space-evenly;
     }
+    .movie-info p {
+        margin-bottom: 5px;
+    }
 }
 
 @media screen and (min-width: 400px) {
@@ -134,7 +132,7 @@ p {
         margin-left: 4px;
         padding-left: none;
         justify-content: space-evenly;
-        font-size: 85%;
+        font-size: 87%;
     }
 
     .movie-image {
@@ -150,43 +148,9 @@ p {
         border: 2px solid rgb(98, 144, 212);
         border-radius: 5px;
     }
-
+    
     .btn-moreinfo, .btn-favorite, .btn-unfavorite {
-        display: none;
-    }
-    .buttons-under-image {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .btn-moreinfo-under-image, .btn-favorite-under-image, .btn-unfavorite-under-image {
-        outline: none;
-        box-shadow: none;
-        padding: 3px;
-        font-size: 11px;
-        border-radius: 20px;
-        border: none;
-        font-weight: 600;
-        width: 100%;
-        margin: 1px;
-    }
-    
-    .btn-moreinfo-under-image {
-        background-color: rgb(88, 161, 117);
-        color: white;
-    }
-    
-    .btn-moreinfo-under-image:hover {
-        background-color: rgb(38, 161, 117);
-        transition: 0.2s;
-    }
-    .btn-favorite-under-image {
-        background-color: rgb(255, 85, 85);
-        color: white;
-    }
-    
-    .btn-favorite-under-image:hover {
-        background-color: rgb(225, 85, 85);
-        transition: 0.2s;
+        padding: 3px 10px;
+        margin-top: -1em;
     }
 }

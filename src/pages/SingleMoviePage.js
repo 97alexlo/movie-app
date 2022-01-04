@@ -47,7 +47,8 @@ function SingleMoviePage() {
                 <div className="movie-overview">
                     <h3 className='singlepage-title'>{movieData.title}</h3>
                     <ul>
-                    <li>Genres: {movieData.genres && movieData.genres.map(g => " " + g.name) + " "}</li> 
+                    <li>Genres: {movieData.genres && movieData.genres.map(g => " " + g.name) + " "}
+                    </li> 
                         <li>Released: {movieData.release_date}</li>
                         <li>Rating: <Badge pill bg="success">{movieData.vote_average} </Badge></li>
                     </ul>
@@ -76,7 +77,8 @@ function SingleMoviePage() {
                     </button>
                     }
             <ul>
-            {}
+                <li>Genres: {movieData.genres && movieData.genres.map(g => " " + g.name) + " "}
+                </li> 
                 <li>Released: {movieData.release_date}</li>
                 <li>Rating: <Badge pill bg="success">{movieData.vote_average} </Badge></li>
             </ul>

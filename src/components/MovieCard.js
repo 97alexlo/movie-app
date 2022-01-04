@@ -28,26 +28,6 @@ function MovieCard({movie}) {
                     <Link to={`/movie/${movie.id}`}>
                         <img className="movie-image" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                     </Link>}
-                    <div className="buttons-under-image">
-                    {/* <Button className="btn-moreinfo" as={Link} to={`/movie/${movie.id}`} variant="primary">
-                    More Info
-                    </Button> {' '} */}
-                    <Link to={`/movie/${movie.id}`}>
-                        <button className='btn-moreinfo-under-image'>
-                            More Info
-                        </button>
-                    </Link>
-                    {' '}
-                    {favorited ?
-                    <button className="btn-favorite-under-image" onClick={() => dispatch(removeFavorite(movie.id))}>
-                        Unfavorite
-                    </button> 
-                    :
-                    <button className="btn-favorite-under-image" onClick={() => dispatch(addFavorite(movie))}>
-                        Favorite
-                    </button>
-                    }
-                </div>
                 </div>
             <div>
             <div className="movie-info">

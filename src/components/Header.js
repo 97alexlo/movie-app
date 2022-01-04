@@ -5,7 +5,7 @@ import '../styles/header.css'
 function Header() {
     return (
         <div className='header-wrapper'>
-        <Navbar className="nav-bar" bg="light" variant="dark" expand="sm">
+        <Navbar className="nav-bar" bg="dark" variant="dark" expand="sm">
         <Container fluid>
            <Navbar.Brand as={Link} to="/" ><h4 >Movie App</h4></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
