@@ -6,7 +6,7 @@
 
 @media screen and (max-width: 600px) {
     .search-input {
-        width: 100%;
+        width: 17em;
         margin-bottom: .5em;
         display: inline-block;
     }

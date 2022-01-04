@@ -109,3 +109,35 @@ p {
         justify-content: space-evenly;
     }
 }
+
+@media screen and (max-width: 380px) {
+    .movie-card {
+        background: url('../images/floor-tile.png');
+        border-radius: 5px;
+        padding: .5em;
+        border: 3px solid darkgray;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+    .movie-info {
+        flex-direction: column;
+        margin-left: 4px;
+        padding-left: none;
+        justify-content: space-evenly;
+    }
+
+    .movie-image {
+        max-width: 6em;
+        height: auto;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+    
+    .movie-image:hover {
+        max-width: 10em;
+        height: auto;
+        border: 2px solid rgb(98, 144, 212);
+        border-radius: 5px;
+    }
+}
