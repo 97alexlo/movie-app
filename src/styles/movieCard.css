@@ -110,13 +110,13 @@ p {
     }
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 400px) {
     .buttons-under-image {
         display: none;
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
     .movie-card {
         background: url('../images/floor-tile.png');
         border-radius: 5px;
