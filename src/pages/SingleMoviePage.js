@@ -30,10 +30,11 @@ function SingleMoviePage() {
 
         fetchMovie()
     }, [id])
-    
+
+    // style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`}}
     return (
         <div className='page-wrapper'>
-        <div className='single-movie-wrapper' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`}}>
+        <div className='single-movie-wrapper'>
             <div className='inner-movie-div'>
                 <img className='poster' src={`https://image.tmdb.org/t/p/original/${movieData.poster_path}`} alt={movieData.title} />
                 <div className="movie-overview">
