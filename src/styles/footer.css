@@ -1,7 +1,7 @@
 .wrapper-footer {
     text-align: center;
     /* background: rgba(34,37,41); */
-    background-image: url('../images/stars.jpeg');
+    background-color: rgb(34,37,41);
     margin: -.5em;
     padding: .5em;
     margin-top: auto;
