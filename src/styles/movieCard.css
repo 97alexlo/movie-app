@@ -120,11 +120,15 @@ p {
         display: flex;
         align-items: center;
     }
+    .card-header-mobile h5 {
+        font-size: 100%;
+    }
     .movie-info {
         flex-direction: column;
         margin-left: 4px;
         padding-left: none;
         justify-content: space-evenly;
+        font-size: 85%;
     }
 
     .movie-image {

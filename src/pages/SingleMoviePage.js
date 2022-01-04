@@ -12,6 +12,7 @@ function SingleMoviePage() {
 
     const [movieData, setMovieData] = useState([]);
     const {id} = useParams();
+
     // const {addMovieToFavorites, removeMovieFromFavorites, favorites}  = useContext(GlobalContext)
 
     const dispatch = useDispatch()
@@ -26,14 +27,18 @@ function SingleMoviePage() {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
             setMovieData(res.data);
         }
+
+        // const fetchBackDrop = async() => {
+        //     const res 
+        // }
         fetchMovie()
     }, [id])
-    
+    console.log(`https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path}`)
     return (
         <div className='page-wrapper'>
-        <div className='single-movie-wrapper' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path})`}}>
+        <div className='single-movie-wrapper' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`}}>
             <div className='inner-movie-div'>
-                <img className='poster' src={`https://image.tmdb.org/t/p/w500/${movieData.poster_path}`} alt="dsadad" />
+                <img className='poster' src={`https://image.tmdb.org/t/p/original/${movieData.poster_path}`} alt={movieData.title} />
                 <div className="movie-overview">
                     <h3 className='singlepage-title'>{movieData.title}</h3>
                     <ul>

@@ -26,7 +26,7 @@ function MovieCard({movie}) {
                         </Link>
                     :
                     <Link to={`/movie/${movie.id}`}>
-                        <img className="movie-image" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                        <img className="movie-image" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                     </Link>}
                 </div>
             <div>
