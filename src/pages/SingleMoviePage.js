@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios'
 import '../styles/singleMoviePage.css'
-import {Button, Badge} from 'react-bootstrap'
+import {Badge} from 'react-bootstrap'
 // import {useContext} from 'react'
 // import {GlobalContext} from '../context/GlobalState.js'
 import {useSelector, useDispatch} from 'react-redux'
