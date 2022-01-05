@@ -17,8 +17,8 @@ function HomePage() {
         const fetchMovies = async() => {
             try {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/${filter}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
-            const first12Movies = res.data.results.slice(0, 12);
-            setMoviesData(first12Movies);
+            // const first12Movies = res.data.results.slice(0, 12);
+            setMoviesData(res.data.results);
             } catch(error) {
                 console.error(error)
             }
