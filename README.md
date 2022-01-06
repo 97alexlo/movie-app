@@ -1,6 +1,6 @@
 ## Movie App using the TMDB API
 https://movie-app-nine-eta.vercel.app/
-
+A responsive movie app where users can search for movies, view information, and save movies to their favorites
 ### To run this app:
 1. clone this repo
 2. ```npm i```
