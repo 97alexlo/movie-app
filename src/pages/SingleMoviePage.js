@@ -51,14 +51,14 @@ function SingleMoviePage() {
         if(a.profile_path !== null) {
             return (
                 <div className="actor-div">
-                    <img src={`https://image.tmdb.org/t/p/w300/${a.profile_path}`} alt={a.name}  className='carousel-image' onDragStart={handleDragStart}  />
+                    <img src={`https://image.tmdb.org/t/p/original/${a.profile_path}`} alt={a.name}  className='carousel-image' onDragStart={handleDragStart}  />
                     <p>{a.name}</p>
                 </div>
             )
         } else {
             return (
                 <div className="actor-div-error">
-                    <img src={NoImageFound} alt={a.name}  className='carousel-image' onDragStart={handleDragStart}  />
+                    <p>No iamge found</p>
                 </div>
             )
         }

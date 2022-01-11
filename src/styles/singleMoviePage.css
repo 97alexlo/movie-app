@@ -25,12 +25,17 @@
     border: 2px solid darkgray;
     border-radius: 5px;
     margin-bottom: 10px;
-    background: url('../images/floor-tile.png')
+    background: url('../images/floor-tile.png');
 }
 .actor-div {
-    display: flex;
-    flex-direction: column;
-    object-fit: contain;
+    text-align: center;
+    margin: 5px;
+    margin-bottom: -5px;
+    color: black;
+}
+
+.actor-div-error {
+
     text-align: center;
     height: auto;
     margin: 5px;
@@ -38,17 +43,13 @@
     color: black;
 }
 
-.actor-div-error {
-    display: flex;
-    flex-direction: column;
-    
-}
-
 
 .actor-div img {
     border-radius: 5px;
     border: 2px solid rgb(56, 53, 53);
     margin-bottom: 5px;
+    max-width: 10em; 
+    height: auto;
 }
 
 .singlepage-title {
@@ -145,5 +146,17 @@ ul {
 
     .carousel {
         margin-top: 10px;
+    }
+
+    .actor-div img {
+        max-width: 8em;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .actor-div img {
+        max-width: 5.5em;
+        height: auto;
     }
 }
