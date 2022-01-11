@@ -7,10 +7,13 @@ import {Badge} from 'react-bootstrap'
 // import {GlobalContext} from '../context/GlobalState.js'
 import {useSelector, useDispatch} from 'react-redux'
 import {addFavorite, removeFavorite} from '../features/favoritesSlice.js'
+import 'react-alice-carousel/lib/alice-carousel.css';
+import AliceCarousel from 'react-alice-carousel';
 
 function SingleMoviePage() {
 
     const [movieData, setMovieData] = useState({});
+    const [actors, setActors] = useState([]);
     const {id} = useParams();
 
     // const {addMovieToFavorites, removeMovieFromFavorites, favorites}  = useContext(GlobalContext)
@@ -27,6 +30,10 @@ function SingleMoviePage() {
             try {
                 const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
                 setMovieData(res.data);
+
+                const actorsRes = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
+                console.log(actorsRes.data.cast)
+                setActors(actorsRes.data.cast);
             } catch(error) {
                 console.error(error)
             }
@@ -38,6 +45,32 @@ function SingleMoviePage() {
     //     const firstGenres = movieData.genres.slice(0, -1)
     //     const lastGenre = movieData.genres.slice(-1)
     // }
+
+    const handleDragStart = (e) => e.preventDefault();
+    const items = actors?.map(a => {
+        if(a.profile_path !== null) {
+            console.log(a.profile_path)
+            return (
+                <div className="actor-div">
+                    <img src={`https://image.tmdb.org/t/p/w300/${a.profile_path}`} alt={a.name}className='carousel-image'onDragStart={handleDragStart}  />
+                    <p>{a.name}</p>
+                </div>
+            )
+        } 
+    })
+
+    const responsive =
+        {
+            0: {
+                items: 3,
+            },
+            600: {
+                items: 4
+            },
+            900: {
+                items: 6
+            }
+        }
 
     return (
         <div className='page-wrapper'>
@@ -65,6 +98,22 @@ function SingleMoviePage() {
                 </div>         
             </div>
         </div>
+        <div className="carousel-wrapper">
+            <div className="carousel">
+            <h5>Credits (Swipe left or right)</h5>
+                <AliceCarousel 
+                mouseTracking
+                autoPlay
+                autoPlayInterval={900}
+                disableDotsControls
+                disableButtonsControls
+                showArrows={true}
+                infinite
+                controlsStrategy="alternate"
+                responsive={responsive} 
+                items ={items}/>            
+            </div>
+        </div>
         <div className='bottom-movie-overview'>
             <h3>{movieData.title}</h3>
             {favorited ?
@@ -83,8 +132,9 @@ function SingleMoviePage() {
                 <li>Rating: <Badge pill bg="success">{movieData.vote_average} </Badge></li>
             </ul>
             <p className='movie-content'>{movieData.overview}</p>
-            </div>
         </div>
+
+    </div>
     )
 }
 
