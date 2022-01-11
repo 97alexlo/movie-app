@@ -38,6 +38,13 @@
     color: black;
 }
 
+.actor-div-error {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
 .actor-div img {
     border-radius: 5px;
     border: 2px solid rgb(56, 53, 53);

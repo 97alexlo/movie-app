@@ -9,6 +9,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {addFavorite, removeFavorite} from '../features/favoritesSlice.js'
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
+import NoImageFound from '../images/no-image-found.png'
 
 function SingleMoviePage() {
 
@@ -32,7 +33,6 @@ function SingleMoviePage() {
                 setMovieData(res.data);
 
                 const actorsRes = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`);
-                console.log(actorsRes.data.cast)
                 setActors(actorsRes.data.cast);
             } catch(error) {
                 console.error(error)
@@ -49,14 +49,19 @@ function SingleMoviePage() {
     const handleDragStart = (e) => e.preventDefault();
     const items = actors?.map(a => {
         if(a.profile_path !== null) {
-            console.log(a.profile_path)
             return (
                 <div className="actor-div">
-                    <img src={`https://image.tmdb.org/t/p/w300/${a.profile_path}`} alt={a.name}className='carousel-image'onDragStart={handleDragStart}  />
+                    <img src={`https://image.tmdb.org/t/p/w300/${a.profile_path}`} alt={a.name}  className='carousel-image' onDragStart={handleDragStart}  />
                     <p>{a.name}</p>
                 </div>
             )
-        } 
+        } else {
+            return (
+                <div className="actor-div-error">
+                    <img src={NoImageFound} alt={a.name}  className='carousel-image' onDragStart={handleDragStart}  />
+                </div>
+            )
+        }
     })
 
     const responsive =
