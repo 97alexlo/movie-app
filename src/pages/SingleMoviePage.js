@@ -58,7 +58,7 @@ function SingleMoviePage() {
         } else {
             return (
                 <div className="actor-div-error">
-                    <p>No iamge found</p>
+                    <p>No image found</p>
                 </div>
             )
         }
