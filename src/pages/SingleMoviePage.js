@@ -9,7 +9,6 @@ import {useSelector, useDispatch} from 'react-redux'
 import {addFavorite, removeFavorite} from '../features/favoritesSlice.js'
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
-import NoImageFound from '../images/no-image-found.png'
 
 function SingleMoviePage() {
 
