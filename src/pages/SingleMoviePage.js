@@ -21,10 +21,9 @@ function SingleMoviePage() {
   const favorites = useSelector((state) => state.favorites.value);
 
   // check if movie is already favorited
-  let favoritedMovie = favorites.find(
+  const favoritedMovie = favorites.find(
     (movieObj) => movieObj.id === movieData.id
   );
-  const favorited = favoritedMovie ? true : false;
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -32,6 +31,7 @@ function SingleMoviePage() {
         const res = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
+        //console.log(res.data)
         setMovieData(res.data);
 
         const actorsRes = await axios.get(
@@ -56,7 +56,7 @@ function SingleMoviePage() {
       return (
         <div className="actor-div">
           <img
-            src={`https://image.tmdb.org/t/p/original/${a.profile_path}`}
+            src={`https://image.tmdb.org/t/p/original${a.profile_path}`}
             alt={a.name}
             className="carousel-image"
             onDragStart={handleDragStart}
@@ -90,13 +90,13 @@ function SingleMoviePage() {
       <div
         className="single-movie-wrapper"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://image.tmdb.org/t/p/original${movieData.backdrop_path})`,
         }}
       >
         <div className="inner-movie-div">
           <img
             className="poster"
-            src={`https://image.tmdb.org/t/p/original/${movieData.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`}
             alt={movieData.title}
           />
           <div className="movie-overview">
@@ -116,21 +116,16 @@ function SingleMoviePage() {
               </li>
             </ul>
             <p className="movie-content">{movieData.overview}</p>
-            {favorited ? (
-              <button
-                className="bottom-btns"
-                onClick={() => dispatch(removeFavorite(movieData.id))}
-              >
-                Unfavorite
-              </button>
-            ) : (
-              <button
-                className="bottom-btns"
-                onClick={() => dispatch(addFavorite(movieData))}
-              >
-                Favorite
-              </button>
-            )}
+            <button
+              className="bottom-btns"
+              onClick={
+                favoritedMovie
+                  ? () => dispatch(removeFavorite(movieData.id))
+                  : () => dispatch(addFavorite(movieData))
+              }
+            >
+              {favoritedMovie ? "Unfavorite" : "Favorite"}
+            </button>
           </div>
         </div>
       </div>
@@ -153,21 +148,16 @@ function SingleMoviePage() {
       </div>
       <div className="bottom-movie-overview">
         <h3>{movieData.title}</h3>
-        {favorited ? (
-          <button
-            className="bottom-btns"
-            onClick={() => dispatch(removeFavorite(movieData.id))}
-          >
-            Unfavorite
-          </button>
-        ) : (
-          <button
-            className="bottom-btns"
-            onClick={() => dispatch(addFavorite(movieData))}
-          >
-            Favorite
-          </button>
-        )}
+        <button
+          className="bottom-btns"
+          onClick={
+            favoritedMovie
+              ? () => dispatch(removeFavorite(movieData.id))
+              : () => dispatch(addFavorite(movieData))
+          }
+        >
+          {favoritedMovie ? "Unfavorite" : "Favorite"}
+        </button>
         <ul>
           <li>
             Genres:{" "}

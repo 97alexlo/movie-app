@@ -11,7 +11,7 @@ function FavoritesPage() {
 
   return (
     <div className="favorites-wrapper">
-      {favorites.length !== 0 ? (
+      {favorites.length > 0 ? (
         <>
           <div className="favorites-header">
             <Badge pill className="badge-counter" bg="light">

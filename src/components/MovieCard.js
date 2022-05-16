@@ -14,9 +14,8 @@ function MovieCard({ movie }) {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.value);
 
-  // check if movie is already favorited
-  let favoritedMovie = favorites.find((movieObj) => movieObj.id === movie.id);
-  let favorited = favoritedMovie ? true : false;
+  const favoritedMovie = favorites.find((movieObj) => movieObj.id === movie.id);
+
   return (
     <div className="movie-card">
       <div className="movie-poster">
@@ -47,27 +46,19 @@ function MovieCard({ movie }) {
           </ul>
           <p>{overviewSubstring}...</p>
           <div className="buttons">
-            {/* <Button className="btn-moreinfo" as={Link} to={`/movie/${movie.id}`} variant="primary">
-                    More Info
-                    </Button> {' '} */}
             <Link to={`/movie/${movie.id}`}>
               <button className="btn-moreinfo">More Info</button>
             </Link>{" "}
-            {favorited ? (
-              <button
-                className="btn-favorite"
-                onClick={() => dispatch(removeFavorite(movie.id))}
-              >
-                Unfavorite
-              </button>
-            ) : (
-              <button
-                className="btn-favorite"
-                onClick={() => dispatch(addFavorite(movie))}
-              >
-                Favorite
-              </button>
-            )}
+            <button
+              className="btn-favorite"
+              onClick={
+                favoritedMovie
+                  ? () => dispatch(removeFavorite(movie.id))
+                  : () => dispatch(addFavorite(movie))
+              }
+            >
+              {favoritedMovie ? "Unfavorite" : "Favorite"}
+            </button>
           </div>
         </div>
       </div>

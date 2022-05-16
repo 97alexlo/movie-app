@@ -9,26 +9,28 @@ function Search() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  const findMovies = async (e) => {
-    try {
-      let res = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
-      );
-      if (res === null) {
-        setResults([]);
-      } else {
-        setResults(res.data.results.splice(0, 12));
-      }
-    } catch (error) {
-      console.error(error);
-      setResults([]);
-    }
-  };
-
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     e.preventDefault();
     setQuery(e.target.value);
-    findMovies(e);
+
+    if (e.target.value !== "") {
+      try {
+        const res = await axios.get(
+          `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+        );
+        //console.log(res)
+        if (!res.data.errors) {
+          setResults(res.data.results.splice(0, 12));
+        } else {
+          setResults([]);
+        }
+      } catch (error) {
+        console.error(error);
+        setResults([]);
+      }
+    } else {
+      setResults([]);
+    }
   };
 
   return (
