@@ -27,9 +27,7 @@ function ResultCard({ movie }) {
               </li>
               <li>
                 <Badge pill bg="success">
-                  {movie.vote_average !== null
-                    ? movie.vote_average
-                    : `No Rating`}{" "}
+                  {movie.vote_average || "No Rating"}
                 </Badge>
               </li>
             </ul>
