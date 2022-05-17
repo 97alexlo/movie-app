@@ -3,8 +3,7 @@ import "../styles/resultCard.css";
 import { Link } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 
-function ResultCard({ movie }) {
-
+function ResultCard({ movie }) {  
   return (
     <div className="results-list-wrapper">
       <Link className="result-link" to={`movie/${movie.id}`}>

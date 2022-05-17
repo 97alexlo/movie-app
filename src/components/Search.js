@@ -13,13 +13,13 @@ function Search() {
     e.preventDefault();
     setQuery(e.target.value);
 
-    if (e.target.value !== "") {
+    if (e.target.value !== "") { // check for empty string or else it returns error 422
       try {
         const res = await axios.get(
           `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
         );
-        //console.log(res)
-        if (!res.data.errors) {
+        //console.log(res);
+        if (res.data.results.length > 0) {
           setResults(res.data.results.splice(0, 12));
         } else {
           setResults([]);

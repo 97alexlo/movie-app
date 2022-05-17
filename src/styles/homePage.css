@@ -24,3 +24,11 @@
 .search-input {
     width: 10em;
 }
+
+.pagination {
+    margin: 0 auto;
+}
+
+.page-counter {
+    margin: 0 auto;
+}
