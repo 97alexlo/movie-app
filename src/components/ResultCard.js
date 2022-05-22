@@ -3,7 +3,7 @@ import "../styles/resultCard.css";
 import { Link } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 
-function ResultCard({ movie }) {
+function ResultCard({ movie }) {  
   return (
     <div className="results-list-wrapper">
       <Link className="result-link" to={`movie/${movie.id}`}>
@@ -27,9 +27,7 @@ function ResultCard({ movie }) {
               </li>
               <li>
                 <Badge pill bg="success">
-                  {movie.vote_average !== null
-                    ? movie.vote_average
-                    : `No Rating`}{" "}
+                  {movie.vote_average || "No Rating"}
                 </Badge>
               </li>
             </ul>

@@ -44,11 +44,6 @@ function SingleMoviePage() {
     fetchMovie();
   }, []);
 
-  // if(movieData.genres) {
-  //     const firstGenres = movieData.genres.slice(0, -1)
-  //     const lastGenre = movieData.genres.slice(-1)
-  // }
-
   const handleDragStart = (e) => e.preventDefault();
   const items = actors?.map((a) => {
     if (a.profile_path !== null) {
