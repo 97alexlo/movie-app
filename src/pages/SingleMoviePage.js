@@ -20,7 +20,6 @@ function SingleMoviePage() {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites.value);
 
-  // check if movie is already favorited
   const favoritedMovie = favorites.find(
     (movieObj) => movieObj.id === movieData.id
   );
@@ -43,7 +42,7 @@ function SingleMoviePage() {
       }
     };
     fetchMovie();
-  }, [id]);
+  }, []);
 
   // if(movieData.genres) {
   //     const firstGenres = movieData.genres.slice(0, -1)

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Badge } from "react-bootstrap";
 
 function ResultCard({ movie }) {
-
   return (
     <div className="results-list-wrapper">
       <Link className="result-link" to={`movie/${movie.id}`}>
