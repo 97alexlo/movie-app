@@ -12,6 +12,7 @@ function HomePage() {
   const [dropdownName, setDropdownName] = useState("Popular");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  
   useEffect(() => {
     document.title = "Movie App - Home";
     const fetchMovies = async () => {
